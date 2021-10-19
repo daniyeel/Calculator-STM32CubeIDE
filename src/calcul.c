@@ -1,10 +1,3 @@
-/*
- * calcul.c
- *
- *  Created on: 16 okt. 2021
- *      Author: Daniel
- */
-
 #include <includes.h>
 #include "main.h"
 
