@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////////////
-// prog: queue.c
-//       shows queue handling: OSQPost, OSQPend/Accept, OSQFlush
-// note: for OSQueueCreate, see main.c!
-// auth: MSC
-//////////////////////////////////////////////////////////////////////////////
-
 #include <string.h>
 #include <stdlib.h> // atoi
 #include <ctype.h>  // toupper
@@ -84,8 +77,7 @@ void InputQueuePendTask(void *pdata)
 		if (qd.OSNMsgs < QSIZE) // wait until q is full
 			continue;
 
-	    // q is full, so we use accept in stead of pend (why wait if not needed)
-//		while ((pq = (PQ)OSQAccept(QueueHandle, &error)) != NULL) // as long as address is returned by OS...
+		// this code doesn't work correctly, values get ruined
 		if (KEYS_read() == key_en)
 		{
 			if (Uart_debug_out & QUEUE_DEBUG_OUT)
